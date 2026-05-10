@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b80b40u1jpbql"]
+
+[ext_resource type="Script" uid="uid://ls4ge76mx2nx" path="res://scripts/item_drop.gd" id="1_0vgj4"]
+[ext_resource type="Texture2D" uid="uid://b8etrykp143c4" path="res://assets/sprites/coin/coin_anim_f0.png" id="2_gy1pl"]
+[ext_resource type="Texture2D" uid="uid://bs47kyp21j1i6" path="res://assets/sprites/coin/coin_anim_f1.png" id="3_porgq"]
+[ext_resource type="Texture2D" uid="uid://d2fbtuqbfxfw0" path="res://assets/sprites/coin/coin_anim_f2.png" id="4_5lbv0"]
+[ext_resource type="Texture2D" uid="uid://cnwneiwfrd8vw" path="res://assets/sprites/coin/coin_anim_f3.png" id="5_igae7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgpdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gy1pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_porgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5lbv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_igae7")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eika7"]
+
+[node name="ItemDrop" type="Area2D" unique_id=321802514]
+script = ExtResource("1_0vgj4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=178448470]
+sprite_frames = SubResource("SpriteFrames_jgpdq")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.63189304
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1872442965]
+shape = SubResource("CircleShape2D_eika7")

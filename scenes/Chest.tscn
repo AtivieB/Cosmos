@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cger6or23ymks"]
+
+[ext_resource type="Texture2D" uid="uid://dtq6s3qliadb0" path="res://assets/sprites/Tiles/tile_0106.png" id="1_cjixx"]
+[ext_resource type="Script" uid="uid://cejfa5nace2o3" path="res://scripts/chest.gd" id="1_s2tek"]
+[ext_resource type="AudioStream" uid="uid://dqboxe6lknxov" path="res://assets/sounds/chest_open.ogg" id="3_rkgax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2tek"]
+size = Vector2(50, 50)
+
+[node name="Chest" type="Area2D" unique_id=1631369304]
+script = ExtResource("1_s2tek")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1370234610]
+texture = ExtResource("1_cjixx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=851904237]
+shape = SubResource("RectangleShape2D_s2tek")
+
+[node name="PopupLabel" type="Label" parent="." unique_id=743053680]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=1486345995]
+stream = ExtResource("3_rkgax")

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://boebhppt5dpdf"]
+
+[ext_resource type="Script" uid="uid://g2vsu2kr2aq" path="res://scripts/level_transition.gd" id="1_og05h"]
+
+[node name="LevelTransition" type="Control" unique_id=1373002951]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_og05h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=117447403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.019607844, 0.019607844, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1092661044]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 200.0
+offset_right = 550.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 48
+text = "LEVEL 2"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="." unique_id=1134534271]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 290.0
+offset_right = 600.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(0.6666667, 0.33333334, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+text = "The Calamity Awaits..."
+horizontal_alignment = 1
+
+[node name="LoadingLabel" type="Label" parent="." unique_id=1771704313]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 520.0
+offset_right = 415.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+theme_override_font_sizes/font_size = 14
+text = "Loading..."

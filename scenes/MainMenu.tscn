@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bcoxxt1xvmq7r"]
+
+[ext_resource type="Script" uid="uid://cuswha6ph2hi7" path="res://scripts/main_menu.gd" id="1_yqorp"]
+[ext_resource type="AudioStream" uid="uid://hbwuvpes2n46" path="res://assets/sounds/bgm_menu.mp3" id="2_0ykhv"]
+
+[node name="MainMenu" type="Control" unique_id=1389115017]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqorp")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1466183397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.043137256, 0.11764706, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=2015838968]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 160.0
+offset_right = 560.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0.7882353, 0.65882355, 1, 1)
+theme_override_font_sizes/font_size = 52
+text = "COSMOS"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="." unique_id=1092028340]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 240.0
+offset_right = 600.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.6666667, 1)
+theme_override_font_sizes/font_size = 18
+text = "
+The Tower Between Worlds"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=1338163288]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 330.0
+offset_right = 500.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 18
+text = "▶ Start Game"
+
+[node name="QuitButton" type="Button" parent="." unique_id=956905610]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 400.0
+offset_right = 500.0
+offset_bottom = 450.0
+theme_override_font_sizes/font_size = 18
+text = "✕ Quit"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=919922205]
+stream = ExtResource("2_0ykhv")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

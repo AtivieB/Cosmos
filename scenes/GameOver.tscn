@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://ccxnvt3m0xd6a"]
+
+[ext_resource type="Script" uid="uid://wr07an3s1s35" path="res://scripts/game_over.gd" id="1_6bcno"]
+[ext_resource type="AudioStream" uid="uid://mocw8s2mgu5a" path="res://assets/sounds/game_over.wav" id="2_qae0b"]
+
+[node name="GameOver" type="Control" unique_id=117366384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bcno")
+
+[node name="Background" type="ColorRect" parent="." unique_id=636159096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.023529412, 0.023529412, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=394209834]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 160.0
+offset_right = 660.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(1, 0.26666668, 0.26666668, 1)
+theme_override_font_sizes/font_size = 44
+text = "EARTH HAS FALLEN"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=236917269]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 270.0
+offset_right = 620.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0.8, 0.53333336, 0.53333336, 1)
+theme_override_font_sizes/font_size = 17
+text = "The Calamity was too powerful.
+The dimensional rift has torn open.
+Try again, warrior."
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=2122081815]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 420.0
+offset_right = 500.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 18
+text = "↺ Try Again"
+
+[node name="MenuButton" type="Button" parent="." unique_id=694146763]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 490.0
+offset_right = 500.0
+offset_bottom = 540.0
+theme_override_font_sizes/font_size = 18
+text = "⟵ Main Menu"
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=1473193315]
+stream = ExtResource("2_qae0b")
+autoplay = true
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

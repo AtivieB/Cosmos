@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://lr4a1m8u4wum"]
+
+[ext_resource type="Script" uid="uid://ce12pulr6e12i" path="res://scripts/npc.gd" id="1_6xvi5"]
+[ext_resource type="Texture2D" uid="uid://c88jneqbejycs" path="res://assets/sprites/wizard/Attack_1.png" id="2_ktgr7"]
+[ext_resource type="AudioStream" uid="uid://yjkiaqwuf8uw" path="res://assets/sounds/npc_talk.mp3" id="3_ktgr7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xvi5"]
+radius = 50.0
+
+[node name="Npc" type="Area2D" unique_id=1909358017]
+script = ExtResource("1_6xvi5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1370712111]
+position = Vector2(-8, -66)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ktgr7")
+hframes = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1851953281]
+shape = SubResource("CircleShape2D_6xvi5")
+
+[node name="TalkSound" type="AudioStreamPlayer2D" parent="." unique_id=61160191]
+stream = ExtResource("3_ktgr7")
+volume_db = -5.0
+
+[node name="InteractHint" type="Label" parent="." unique_id=737336178]
+visible = false
+offset_left = -53.0
+offset_top = -90.0
+offset_right = 72.0
+offset_bottom = -67.0
+text = "Press E to speak"
+
+[node name="DialogUI" type="CanvasLayer" parent="." unique_id=1113359595]
+
+[node name="DialogBox" type="Panel" parent="DialogUI" unique_id=691915748]
+visible = false
+offset_left = 20.0
+offset_top = 490.0
+offset_right = 780.0
+offset_bottom = 580.0
+
+[node name="SpeakerLabel" type="Label" parent="DialogUI/DialogBox" unique_id=1965005470]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 14
+
+[node name="DialogText" type="Label" parent="DialogUI/DialogBox" unique_id=987113533]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 28.0
+offset_right = 740.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 2

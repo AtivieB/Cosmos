@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bcqtvelk6w4r6"]
+
+[ext_resource type="Script" uid="uid://dvm1xlhl2jrxa" path="res://scripts/cutscene.gd" id="1_s4rvo"]
+
+[node name="Cutscene" type="Control" unique_id=1064024442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s4rvo")
+
+[node name="Background" type="ColorRect" parent="." unique_id=538707944]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019607844, 0.019607844, 0.0627451, 1)
+
+[node name="StoryLabel" type="Label" parent="." unique_id=954600515]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(0.6666667, 0.73333335, 1, 1)
+theme_override_font_sizes/font_size = 17
+text = "(see script — set in code)"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=607859841]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 500.0
+offset_right = 500.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 18
+text = "Begin Journey →"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_begin_button_pressed"]

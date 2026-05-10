@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d3otyggk3gly3"]
+
+[ext_resource type="Script" uid="uid://bapp2l1exgrad" path="res://scripts/exit_portal.gd" id="1_hsj0b"]
+[ext_resource type="AudioStream" uid="uid://c282hynrtv26r" path="res://assets/sounds/treasure-open.wav" id="2_x3041"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oft5k"]
+radius = 40.0
+
+[node name="ExitPortal" type="Area2D" unique_id=1787655479]
+script = ExtResource("1_hsj0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546660491]
+shape = SubResource("CircleShape2D_oft5k")
+
+[node name="PortalGlow" type="ColorRect" parent="." unique_id=1746266661]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.4, 0.2, 1, 1)
+
+[node name="PortalLabel" type="Label" parent="." unique_id=1545257142]
+offset_left = -50.0
+offset_top = -60.0
+offset_right = 32.0
+offset_bottom = -37.0
+theme_override_font_sizes/font_size = 14
+text = "⬆ Next Floor"
+
+[node name="PortalSound" type="AudioStreamPlayer2D" parent="." unique_id=928211690]
+stream = ExtResource("2_x3041")

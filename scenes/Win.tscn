@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://ckmddpngem380"]
+
+[ext_resource type="Script" uid="uid://ckabxwk5ftyf0" path="res://scripts/win.gd" id="1_pnk8a"]
+[ext_resource type="AudioStream" uid="uid://hbwuvpes2n46" path="res://assets/sounds/bgm_menu.mp3" id="2_24ius"]
+
+[node name="Win" type="Control" unique_id=1286580230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pnk8a")
+
+[node name="Background" type="ColorRect" parent="." unique_id=301597675]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.023529412, 0.101960786, 0.050980393, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=592568478]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 640.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0.4, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 44
+text = "EARTH IS SAVED!"
+horizontal_alignment = 1
+
+[node name="BodyLabel" type="Label" parent="." unique_id=910192524]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 270.0
+offset_right = 600.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0.6, 0.8666667, 0.73333335, 1)
+theme_override_font_sizes/font_size = 17
+text = "You defeated The Calamity.
+The dimensional rift is closed.
+Earth is safe once more."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1850268466]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 430.0
+offset_right = 500.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 18
+text = "⟵ Main Menu"
+
+[node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1335713368]
+stream = ExtResource("2_24ius")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_menu_button_pressed"]

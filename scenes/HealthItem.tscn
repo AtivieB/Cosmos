@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bagnp7736xhbd"]
+
+[ext_resource type="Script" uid="uid://f4c3b6ki3kyj" path="res://scripts/health_item.gd" id="1_7644f"]
+[ext_resource type="Texture2D" uid="uid://25m3mk4gs888" path="res://assets/sprites/items/ui_heart_full.png" id="1_aahef"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aahef"]
+radius = 14.0
+
+[node name="HealthItem" type="Area2D" unique_id=1111591897]
+script = ExtResource("1_7644f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1820150259]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_aahef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1092933708]
+shape = SubResource("CircleShape2D_aahef")

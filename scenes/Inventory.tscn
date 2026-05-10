@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dn5tmnynomk4"]
+
+[ext_resource type="Script" uid="uid://c1qje4dk5wguj" path="res://scripts/inventory.gd" id="1_kh8if"]
+
+[node name="Inventory" type="CanvasLayer" unique_id=1434462448]
+script = ExtResource("1_kh8if")
+
+[node name="Panel" type="Panel" parent="." unique_id=206824088]
+offset_left = 190.0
+offset_top = 140.0
+offset_right = 610.0
+offset_bottom = 460.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1485824002]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=225742208]
+layout_mode = 2
+text = "INVENTORY — Press I to close"
+
+[node name="ItemList" type="Label" parent="Panel/VBoxContainer" unique_id=24187967]
+layout_mode = 2
